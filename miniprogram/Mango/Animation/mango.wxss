@@ -1,0 +1,148 @@
+/**
+ * Mango动画库管理类
+ */
+
+@import "./animate.wxss";
+
+.mango {
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+}
+
+/* 小程序动画 延迟加载*/
+.mango-load {
+    animation-delay: 1s;
+    -webkit-animation-delay: 1s;
+}
+
+.mango-load-d1s {
+    animation-delay: 4s;
+    -webkit-animation-delay: 4s;
+}
+
+.mango-load-d2s {
+    animation-delay: 5s;
+    -webkit-animation-delay: 5s;
+}
+
+.mango-load-d3s {
+    animation-delay: 6s;
+    -webkit-animation-delay: 6s;
+}
+
+.mango-slow {
+    animation-duration: 2s;
+    -webkit-animation-duration: 2s; 
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+}
+
+.mango-d1s {
+    animation-delay: 1s;
+    -webkit-animation-delay: 1s;
+}
+
+.mango-d2s {
+    animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+}
+
+.mango-d3s {
+    animation-delay: 3s;
+    -webkit-animation-delay: 3s;
+}
+
+.mango-d4s {
+    animation-delay: 4s;
+    -webkit-animation-delay: 4s;
+}
+
+.mango-d5s {
+    animation-delay: 5s;
+    -webkit-animation-delay: 5s;
+}
+
+/* 淡入 */
+.fade-in {
+    animation-name: fade-in;
+    -webkit-animation-name: fade-in;
+}
+
+/* 底部往上淡入 */
+.fade-in-up {
+    animation-name: fade-in-up;
+    -webkit-animation-name: fade-in-up;
+}
+
+/* 淡出 */
+.fade-out {
+    animation-name: fade-out;
+    -webkit-animation-name: fade-out;
+}
+
+/* 放大 */
+.scale {
+    animation-name: scale;
+    -webkit-animation-name: scale;
+}
+
+/* 三倍放大 */
+.scale3x {
+    animation-name: scale3x;
+    -webkit-animation-name: scale3x;
+}
+
+/* 呼吸 */
+.breath {
+    animation-name: breath;
+    -webkit-animation-name: breath;
+    animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+    animation-direction: alternate;
+    -webkit-animation-direction: alternate;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+}
+
+.breath-slow {
+    animation-name: breath-slow;
+    -webkit-animation-name: breath-slow;
+    animation-duration: 3s;
+    -webkit-animation-duration: 3s;
+    animation-direction: alternate;
+    -webkit-animation-direction: alternate;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+}
+
+/* 旋转 */
+.pulse {
+    animation-name: pulse;
+    -webkit-animation-name: pulse;
+}
+
+/* 心跳 */
+.heartBeat {
+    -webkit-animation-name: heartBeat;
+    animation-name: heartBeat;
+    -webkit-animation-duration: 1.3s;
+    animation-duration: 1.3s;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+}
+
+/* tada */  
+.tada {
+    -webkit-animation-name: tada;
+    animation-name: tada;
+}
+
+/* bounceIn */
+.bounceIn {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-name: bounceIn;
+    animation-name: bounceIn;
+}

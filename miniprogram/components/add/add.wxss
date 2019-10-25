@@ -1,0 +1,245 @@
+/* components/add/add.wxss */
+@import "/Mango/Animation/mango.wxss";
+
+.add {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 999;
+
+    background: rgba(255, 255, 255, 1);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.body {
+    width: 100%;
+    height: 400rpx;
+    position: absolute;
+}
+
+.tip {
+    font-size: 30rpx;
+    font-weight: 300;
+    color: lightgray;
+}
+
+.item {
+    width: 20vw;
+    height: 20vw;
+    position: absolute;
+
+    bottom: 0;
+    left: 40vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.item image {
+    width: 10vw;
+    height: 10vw;
+}
+
+.item text {
+    font-size: 30rpx;
+    padding: 10rpx 0;
+}
+
+
+.item1-up {
+    animation: item1-up;
+    -webkit-animation: item1-up;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+    animation-duration: 0.4s;
+    -webkit-animation-duration: 0.4s;
+}
+
+.item2-up {
+    animation: item2-up;
+    -webkit-animation: item2-up;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+    animation-duration: 0.4s;
+    -webkit-animation-duration: 0.4s;
+}
+
+.item3-up {
+    animation: item3-up;
+    -webkit-animation: item3-up;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+    animation-duration: 0.4s;
+    -webkit-animation-duration: 0.4s;
+}
+
+.item1-down {
+    animation: item1-down;
+    -webkit-animation: item1-down;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+    animation-duration: 0.4s;
+    -webkit-animation-duration: 0.4s;
+}
+
+.item2-down {
+    animation: item2-down;
+    -webkit-animation: item2-down;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+    animation-duration: 0.4s;
+    -webkit-animation-duration: 0.4s;
+}
+
+.item3-down {
+    animation: item3-down;
+    -webkit-animation: item3-down;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+    animation-duration: 0.4s;
+    -webkit-animation-duration: 0.4s;
+}
+
+@keyframes item1-up {
+    from {
+        bottom: 0;
+        left: 40vw;
+    }
+
+    to {
+        bottom: 200rpx;
+        left: 0;
+    }
+}
+
+@-webkit-keyframes item1-up {
+    from {
+        bottom: 0;
+        left: 40vw;
+    }
+
+    to {
+        bottom: 200rpx;
+        left: 0;
+    }
+}
+
+@keyframes item2-up {
+    from {
+        bottom: 0;
+    }
+
+    to {
+        bottom: 200rpx;
+    }
+}
+
+@-webkit-keyframes item2-up {
+    from {
+        bottom: 0;
+    }
+
+    to {
+        bottom: 200rpx;
+    }
+}
+
+@keyframes item3-up {
+    from {
+        bottom: 0;
+        left: 40vw;
+    }
+
+    to {
+        bottom: 200rpx;
+        left: 80vw;
+    }
+}
+
+@-webkit-keyframes item3-up {
+    from {
+        bottom: 0;
+        left: 40vw;
+    }
+
+    to {
+        bottom: 200rpx;
+        left: 80vw;
+    }
+}
+
+
+@keyframes item1-down {
+    from {
+        bottom: 200rpx;
+        left: 0;
+    }
+
+    to {
+        bottom: 0;
+        left: 40vw;
+    }
+}
+
+@-webkit-keyframes item1-down {
+    from {
+        bottom: 200rpx;
+        left: 0;
+    }
+
+    to {
+        bottom: 0;
+        left: 40vw;
+    }
+}
+
+@keyframes item2-down {
+    from {
+        bottom: 200rpx;
+    }
+
+    to {
+        bottom: 0rpx;
+    }
+}
+
+@-webkit-keyframes item2-down {
+    from {
+        bottom: 200rpx;
+    }
+
+    to {
+        bottom: 0rpx;
+    }
+}
+
+@keyframes item3-down {
+    from {
+        bottom: 200rpx;
+        left: 80vw;
+    }
+
+    to {
+        bottom: 0;
+        left: 40vw;
+    }
+}
+
+@-webkit-keyframes item3-down {
+    from {
+        bottom: 200rpx;
+        left: 80vw;
+    }
+
+    to {
+        bottom: 0;
+        left: 40vw;
+    }
+}

@@ -1,0 +1,34 @@
+<!--pages/about/about.wxml-->
+<toast id="toast"></toast>
+
+<nav
+    id="nav"
+    back
+    transparent
+    alwaysShow
+>
+</nav>
+
+<view class="body interval" style="padding-top: {{ headerHeight }}px">
+    <view class="main mango fade-in">
+        <view class="content">
+
+            <!-- 开发日记 -->
+            <block wx:if="{{ type == 'log' }}">
+                吧啦吧啦
+            </block>
+            <!-- 开发日记 end -->
+
+            <!-- 关于作者 -->
+            <block wx:if="{{ type == 'zero' }}">
+                <image class="content-avatar" src="/images/about/zero.png"></image>
+                <text class="content-title">{{ text.zero.title }}</text>
+                <text class="content-text" bindtap="copy">{{ text.zero.content }}</text>
+            </block>
+            <!-- 关于作者 end -->
+
+        </view>
+    </view>
+</view>
+
+<footer></footer>

@@ -1,0 +1,140 @@
+/* pages/addV2/add.wxss */
+page {
+    background: #f5f5f5;
+}
+
+.interval {
+    margin-left: 5vw;
+    width: 90vw;
+    border-radius: 20rpx;
+}
+
+.body {
+    height: auto;
+}
+
+/* 图标 */
+
+.icon-body {
+    width: 90vw;
+    border-radius: 20rpx;
+    height: 70vw; /* 15 * 4  + 10*/
+    background: white;
+}
+
+.flag-icon {
+    width: 10vw;
+    height: 10vw;
+    margin: 2.5vw;
+    float:left;
+    border-radius: 10rpx;
+}
+  
+.flag-icon-bg {
+    background: #F5F5F5;
+}
+
+.light-gray-bg {
+  background: lightgray;
+}
+  
+.flag-icon image {
+    width: 6vw;
+    height: 6vw;
+    margin: 2vw;
+}
+
+/* 更多 */
+.other {
+    margin: 50rpx 0;
+    border-radius: 20rpx;
+    width: 90vw;
+    background: white;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding: 50rpx 20rpx;
+}
+
+.flag-name-text {
+  margin-top: 0rpx;
+}
+
+.flag-name {
+    font-size: 28rpx;
+    background: #F5F5F5;
+    height: 70rpx;
+    padding: 0 20rpx;
+    border-radius: 10rpx;
+}  
+
+.flag-date {
+    width: 10vw;
+    height: 10vw;
+    margin: 0 1vw;
+    border-radius: 6vw;
+    float: left; 
+    text-align: center;
+    line-height: 10vw;
+    font-size: 30rpx;
+  }
+
+  .date-on {
+    color:white;
+  }
+  
+  .flag-date-bg {
+    background: #F5F5F5;
+  }
+  
+  .no-block {
+    display: block;
+    float: left;
+  }
+  
+  .share-switch {
+    padding: 50rpx 30rpx 20rpx;
+  }
+  
+  .finish-btn, .del-btn {
+    width: 50vw;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    border-radius: 10rpx;
+    font-size: 35rpx;
+    margin: 0 auto;
+    color:white;
+  }
+  
+  .del-btn {
+    background: #E64340;
+    color:white;
+  }
+  
+  .btn-bg {
+    height: 150rpx;
+    padding-top: 50rpx;
+    /* margin: 50rpx auto 150rpx; */
+  }
+
+  /* egg */
+  .egg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .egg text {
+    font-size: 25rpx;
+    text-align: center;
+  }
+
+  .egg-1 {
+    color: lightgray;
+  }
+
+  .egg-2 {
+    color: #f1f1f1;
+  }

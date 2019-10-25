@@ -1,0 +1,26 @@
+<!--components/add/add.wxml-->
+<view class="add mango {{ show ? 'fade-in': 'fade-out' }} " bindtap="hide" wx:if="{{ display }}">
+    <text class="tip mango fade-in-up">你是我的习惯</text>
+    <view class="body" style="bottom:{{ bottom }}px">
+        <navigator url="/pages/addV2/add">
+            <view class="item {{ show ? 'item1-up' : 'item1-down' }}">
+                <image src="/images/add/habit.png"></image>
+                <text>习惯</text>
+            </view>
+        </navigator>
+
+        <navigator url="/pages/square/add/add">
+            <view class="item {{ show ? 'item2-up' : 'item2-down' }}">
+                <image src="/images/add/square.png"></image>
+                <text>随笔</text>
+            </view>
+        </navigator>
+
+        <navigator url="/pages/award/add/add">
+            <view class="item {{ show ? 'item3-up' : 'item3-down' }}">
+                <image src="/images/add/award.png"></image>
+                <text>奖励</text>
+            </view>
+        </navigator>
+    </view>
+</view>

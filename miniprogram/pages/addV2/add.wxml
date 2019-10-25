@@ -1,0 +1,82 @@
+<!--pages/addV2/add.wxml-->
+<nav
+    title="添加习惯"
+    alwaysShow
+    back
+>
+</nav>
+
+<toast id="toast"></toast>
+
+<view class="body interval" style="padding-top: {{ headerHeight }}px">
+    <!-- 图标 -->
+    <text class='tip-text-big'>{{ text.iconTip }}</text>
+    <swiper class='icon-body'
+            indicator-dots="true"
+            circular="true">
+        <block wx:for="{{ icon }}" wx:for-item="swiperItem">
+            <swiper-item>
+                <view wx:for="{{ swiperItem }}" class='flag-icon {{ item == selected_icon ? "light-gray-bg" : "flag-icon-bg"}}' data-id="{{ item }}" bindtap="selectIcon">
+                    <image src='../../images/flag-icon/{{ item }}.png'></image>
+                </view>
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class='clear'></view>
+    <!-- 图标 end -->
+
+    <!-- 其他 -->
+    <view class="other">
+        <view>
+            <text class='tip-text-big flag-name-text'>{{ text.nameTip }}</text>
+            <input class='flag-name' type='text' placeholder='{{ text.egTip }}' bindinput="nameInput" maxlength="10" value="{{ title }}"></input>
+        </view>
+
+        <!-- 时间选择 -->
+        <view>
+          <text class='tip-text-big'>{{ text.beginTip }}</text>
+          <view>
+            <view wx:for="{{ weekday }}" class='flag-date {{ weekday_bool[index] ? "mango-bg date-on" : "flag-date-bg" }}' data-offset="{{ 1 << index }}" data-index=" {{ index }}" bindtap="selectDay">{{ item }}</view>
+          </view>
+          <view class='clear'></view>
+        </view>
+        <!-- 时间选择 end -->
+
+        <!-- 截止时间 -->
+        <view>
+          <text class='tip-text-big'>{{ text.endTip }}</text>
+          <view>
+            <picker
+              mode="date"
+              value="{{ date }}"
+              start="{{ date }}"
+              end="2021-12-31"
+              bindchange="bindDateChange"
+            >
+              <view class="picker">
+                <input class='flag-name' type='text' placeholder='{{ text.endPlaceholder }}' value="{{ date }}" disabled="true"></input>
+              </view>
+            </picker>
+          </view>
+          <view class='clear'></view>
+        </view>
+        <!-- 截止时间 end -->
+    </view>
+    <!-- 其他 end -->
+</view>
+
+<!-- 保存 -->
+<view class="btn-bg">
+  <view class='finish-btn mango-bg' bindtap="save">{{ text.finish }}</view>
+</view>
+<!-- 保存 end -->
+<!-- 删除 -->
+<view style="margin-bottom:50rpx" wx:if="{{ edit_id }}">
+  <view class='del-btn' bindtap="del">{{ text.delete }}</view>
+</view>
+<!-- 删除 end -->
+
+<view class="egg">
+  <text class="egg-1">{{ text.egg }}</text>
+  <text class="egg-2">{{ text.mango }}</text>
+</view>

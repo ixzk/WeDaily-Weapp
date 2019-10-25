@@ -1,0 +1,130 @@
+/* pages/square/add/add.wxss */
+
+page {
+    background: #f5f5f5;
+    
+}
+
+.body {
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+/*
+ * 图片区域
+ */
+.image-area {
+    width: 100vw;
+    height: 400rpx;
+    /* background: rebeccapurple; */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.image-area .icon {
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.image-area .image {
+    width: 100%;
+    height: 100%;
+
+    background-repeat: no-repeat;
+    background-size: 100vw auto;
+    background-position: center center;
+}
+
+/**
+ * 菜单区
+ */
+.menu {
+    width: 100%;
+    height: 100rpx;
+    /* background: gray; */
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    color: gray;
+    font-size: 30rpx;
+    
+    background: white;
+    border-bottom: 2rpx solid #f5f5f5;
+}
+
+.limit {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.limit-icon {
+    width: 50rpx;
+    height: 50rpx;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.limit-icon image {
+    width: 30rpx;
+    height: 30rpx;
+}
+
+/**
+ * 输入区域
+ */
+.content-area {
+    /* background: blue; */
+    flex: 1;
+    width: 100vw;
+
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding: 50rpx;
+
+    background: white;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.content-area textarea {
+    width: 100%;
+    flex: 1;
+    font-size: 35rpx;
+}
+
+/**
+ * 完成
+ */
+.finish {
+    width: 200rpx;
+    height: 80rpx;
+    
+    margin-top: 10rpx;
+    
+    line-height: 80rpx;
+    text-align: center;
+    border-radius: 40rpx;
+    
+    color: #242529;
+}

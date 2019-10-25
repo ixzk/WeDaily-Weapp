@@ -1,0 +1,47 @@
+<!--pages/square/square/square.wxml-->
+<nav
+    id="nav"
+    title="{{ text.navTitle }}"
+>
+</nav>
+
+<toast id="toast"></toast>
+<add id="add"></add>
+
+<view class="header interval" style="height:{{ headerHeight }}px">
+    <view class="bigTitle">
+        <view class="{{ myVisual ? 'small' : 'big' }}" bindtap="changeVisual" data-type="ta">{{ text.square }}</view>
+        <view class="{{ myVisual ? 'big' : 'small' }}" bindtap="changeVisual" data-type="my">{{ text.mine }}</view>
+    </view>
+</view>
+
+<view class="body interval">
+
+    <block wx:for="{{ lists }}">
+        <view class="cell" bindtap="detail" data-item="{{ item }}">
+            <view class="cell-avatar">
+                <image src="{{ item.avatar }}"></image>
+                <image src="{{ item.patrner_avatar }}" wx:if="{{ item.patrner_avatar }}"></image>
+            </view>
+            <view class="cell-image">
+                <block wx:if="{{ item.image }}">
+                    <image src="{{ item.image }}" mode="widthFix"></image>
+                </block>
+                <block wx:else>
+                    <view class="no-image">
+                        {{ item.formatTime }}
+                    </view>
+                </block>
+            </view>
+            <view class="cell-text">
+                <text>{{ item.content }}</text>
+            </view>
+        </view>
+    </block>
+</view>
+
+<view class="no-more" wx:if="{{ noMore }}">
+    {{ text.noMore }}
+</view>
+
+<footer></footer>

@@ -1,0 +1,25 @@
+<!--components/toast.wxml-->
+<view class='toast-body' wx:if="{{ !hidden }}">
+  <view class='bg'>
+    
+    <view class="default-style" wx:if="{{ style == 0 }}">
+      <block wx:if="{{ icon == 'loading' }}">
+        <view class="spinner-box">
+          <view class="configure-border-1">  
+            <view class="configure-core"></view>
+          </view>  
+          <view class="configure-border-2">
+            <view class="configure-core"></view>
+          </view> 
+        </view>
+      </block>
+      <block wx:else>
+        <image src='images/{{ icon }}-d.png' class="default-image mango heartBeat"></image>
+      </block>
+    </view>
+
+    <image src='images/{{ icon }}.gif' wx:if="{{ style == 1 }}" class="mango-image"></image>
+    
+    <text class="tip-text">{{ text }}</text>
+  </view>
+</view>

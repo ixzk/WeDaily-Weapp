@@ -1,0 +1,181 @@
+/* components/toast.wxss */
+@import "/Mango/Animation/mango.wxss";
+
+.toast-body {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg {
+  width: 200rpx;
+  height: 200rpx;
+  /* background: rgba(17, 17, 17, 0.7); */
+  background: rgba(104, 103, 103, 0.842);
+  border-radius: 30rpx;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 默认风格 */
+.default-style {
+  width: 120rpx;
+  height: 120rpx;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.default-image {
+  width: 90rpx;
+  height: 90rpx;
+}
+
+.spinner-box {
+  width: 120rpx;
+  height: 120rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.configure-border-1 {
+  width: 60rpx;
+  height: 60rpx;
+  padding: 3rpx;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  animation: configure-clockwise 3s ease-in-out 0s infinite alternate;
+  -webkit-animation: configure-clockwise 3s ease-in-out 0s infinite alternate;
+}
+
+.configure-border-2 {
+  width: 60rpx;
+  height: 60rpx;
+  padding: 3rpx;
+  left: -60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: lightgray;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  animation: configure-xclockwise 3s ease-in-out 0s infinite alternate;
+  -webkit-animation: configure-xclockwise 3s ease-in-out 0s infinite alternate;
+}
+
+.configure-core {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(104, 103, 103, 0.842);
+}
+
+@keyframes configure-clockwise {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes configure-clockwise {
+  0% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes configure-xclockwise {
+  0% {
+    transform: rotate(45deg);
+  }
+  25% {
+    transform: rotate(-45deg);
+  }
+  50% {
+    transform: rotate(-135deg);
+  }
+  75% {
+    transform: rotate(-225deg);
+  }
+  100% {
+    transform: rotate(-315deg);
+  }
+}
+@-webkit-keyframes configure-xclockwise {
+  0% {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+  25% {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+  50% {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+  }
+  75% {
+    transform: rotate(-225deg);
+    -webkit-transform: rotate(-225deg);
+  }
+  100% {
+    transform: rotate(-315deg);
+    -webkit-transform: rotate(-315deg);
+  }
+}
+
+
+
+/*  mango 风格 */
+.mango-image {
+  width: 120rpx;
+  height: 120rpx;
+  /* margin: 0 10rpx; */
+}
+
+.toast-body text {
+  color: white;
+  font-size: 30rpx;
+  text-align: center;
+}

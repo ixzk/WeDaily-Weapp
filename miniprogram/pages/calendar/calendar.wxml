@@ -1,0 +1,121 @@
+<!--pages/test/test.wxml-->
+<nav
+    title="打卡记录"
+    alwaysShow
+    back
+>
+</nav>
+
+<toast id="toast"></toast>
+
+<view class="calendar" style="padding-top: {{ headerHeight }}px">
+  <view class="calendar-header">
+    <view class="left" bindtap="changeMonth" data-type="down">
+      <image src="/images/common/left.png"></image>
+    </view>
+
+    <view class="center">
+      {{ monthStr[month] }}
+    </view>
+
+    <view class="right" bindtap="changeMonth" data-type="up">
+      <image src="/images/common/right.png"></image>
+    </view>
+  </view>
+  <view class="calendar-body">
+    <view class="weekday">
+      <view class="item">S</view>
+      <view class="item">M</view>
+      <view class="item">T</view>
+      <view class="item">W</view>
+      <view class="item">T</view>
+      <view class="item">F</view>
+      <view class="item">S</view>
+    </view>
+    
+    <view class="day">
+      <block wx:for="{{ days }}">
+        <view class="item">
+          <view class="{{ item.className }} {{ item.onStyle }}">{{ item.day }}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+
+<!-- 从奖励进入 -->
+<block wx:if="{{ type == 'award' }}">
+
+  <text class="tip-text">{{ text.detail.timeTip }}{{ award.formatTime }}</text>
+  
+  <!-- 关联习惯 -->
+  <!-- <navigator url="/pages/addV2/add?id={{ habit._id }}"> -->
+  <view class='list-cell mango fade-in-up'>
+    <view class="list-cell-left">
+        <view class='list-cell-icon'>
+            <image src='../../images/flag-icon/{{ habit.icon }}.png'></image>
+        </view>
+    </view>
+    <view class='list-cell-content'>
+      <view class='list-cell-content-title'>
+        <text>{{ habit.title }}</text>
+      </view>
+    </view>
+
+    <view class='list-cell-right mango breath'>
+      <image src="/images/common/edit.png"></image>
+    </view>
+
+  </view>
+  <!-- </navigator> -->
+  <!-- 关联习惯 end -->
+  
+  <!-- 奖励详情 -->
+  <view class="detail mango fade-in-up">
+    <text class="tip-text-big">{{ text.detail.nameTip }}</text>
+    <text class="detail-text">{{ award.title }}</text>
+    
+    <text class="tip-text-big">{{ text.detail.contentTip }}</text>
+    <text class="detail-text">{{ award.content }}</text>
+    
+    <text class="tip-text-big">{{ text.detail.lastTip }}</text>
+    <view class="day">
+        <block wx:if="{{ last_num > 0 }}">
+          <view class="day-bg">
+              {{ last_type == 'time' ? '天' : '次' }}
+          </view>
+          <text class="day-tip">{{ last_num }}</text>  
+        </block>
+
+        <block wx:else>
+          <view class="day-bg"></view>
+          <text class="day-tip">{{ text.detail.finish }}</text>  
+        </block>
+    </view>
+
+    <block wx:if="{{ userInfo._openid == award._openid }}">
+      <!-- 保存 -->
+      <view class="btn-bg" wx:if="{{ last_num <= 0 }}">
+        <view class='finish-btn mango-bg' bindtap="finish">{{ text.detail.award }}</view>
+      </view>
+      <!-- 保存 end -->
+      <!-- 删除 -->
+      <view style="margin-bottom:50rpx">
+        <view class='del-btn' bindtap="delete">{{ text.detail.delete }}</view>
+      </view>
+      <!-- 删除 end -->
+    </block>
+
+  </view>
+  <!-- 奖励详情 -->
+
+</block>
+<!-- 从奖励进入 end -->
+
+<block wx:if="{{ type == 'my' }}">
+  <!-- 保存 -->
+  <view class="btn-bg">
+    <view class='finish-btn mango-bg' bindtap="editHabit">{{ text.editHabit }}</view>
+  </view>
+  <!-- 保存 end -->
+</block>

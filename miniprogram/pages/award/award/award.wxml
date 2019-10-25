@@ -1,0 +1,56 @@
+<!--pages/award/award.wxml-->
+
+<toast id="toast"></toast>
+<add id="add"></add>
+
+<view class="header interval" style="height:{{ headerHeight }}px">
+    <view class="bigTitle">
+        <view class="{{ ongoing ? 'big' : 'small' }}" bindtap="changeVisual" data-type="ongoing">{{ text.ongoing }}</view>
+        <view class="{{ ongoing ? 'small' : 'big' }}" bindtap="changeVisual" data-type="finish">{{ text.finish }}</view>
+    </view>
+</view>
+<view class="body interval">
+    <block wx:if="{{ lists.length == 0 }}">
+        <view class="empty" bindtap="add">
+            <block wx:if="{{ ongoing }}">
+                <text>{{ text.onEmptyTip }}</text>
+                <text>🎁</text>
+                <text>{{ text.onEmptyButton }}</text>
+            </block>
+            <block wx:else>
+                <text>{{ text.finishEmptyTip }}</text>
+            </block>
+        </view>
+    </block>
+    <block wx:else>
+        <view class="lists">
+            <block wx:for="{{ lists }}">
+                <view class="list-cell {{ (item._openid == userInfo._openid && !item.to_partner) ? 'mango-grad-bg' : 'other-grad-bg' }}" bindtap="clickAward" data-index="{{ index }}">
+                    <view class="list-cell-avatar">
+                        <image src="{{ item.avatar }}"></image>
+                    </view>
+                    <view class="list-cell-content">
+                        <text class="cell-title">{{ item._openid == userInfo._openid ? (item.to_partner ? text.toPartner : '') : (item.to_partner ? text.toMyself : '') }} {{ item.title }}</text>
+                        <text class="cell-content">{{ item.content }}</text>
+                        <text class="cell-habit">{{ text.fromHabit }}{{ item.habit_name }}</text>
+                    </view>
+                    <view class="list-cell-right">
+                        <view class="right-header">
+                            {{ item.isTime ? text.lastTime : text.lastCount }}
+                        </view>
+                        <view class="right-content">
+                            <block wx:if="{{ item.isTime }}">
+                                {{ item.lastTime > 0 ? item.lastTime : text.timeFinish }}
+                            </block>
+                            <block wx:else>
+                                {{ item.lastCount > 0 ? item.lastCount : text.countFinish }}
+                            </block>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </block>
+</view>
+
+<footer></footer>

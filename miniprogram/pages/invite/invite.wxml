@@ -1,0 +1,72 @@
+<!--pages/invite/invite.wxml-->
+<toast id="toast"></toast>
+
+<!-- 来自邀请 -->
+<block wx:if="{{ invite }}">
+    <nav
+        transparent
+        alwaysShow
+        back
+    >
+    </nav>
+    <view class="from-body">
+        <image class="from-bg" src="{{ bg[selected] }}" mode="aspectFill"></image>
+        
+        <view class="from-content" wx:if="{{ !loading }}">
+            <view><image class="avatar mango fade-in-up" src="{{ user.avatar }}"></image></view>
+            <view class="name mango fade-in-up">{{ name }}</view>
+            <view class="content mango fade-in-up">{{ content }}</view>
+            <view class="buttons mango fade-in-up">
+                <view class="receive-btn" bindtap="receive">{{ text.receive }}</view>
+                <view class="reject-btn" bindtap="reject">{{ text.reject }}</view>
+            </view>
+        </view>
+        <view class="mango-daily mango fade-in">{{ text.mangoTip }}</view>
+    </view>
+
+</block>
+
+<!-- 邀请好友 -->
+<block wx:else>
+    <nav
+        title="邀请"
+        alwaysShow
+        back
+    >
+    </nav>
+    <view class="body" style="margin-top:{{ navHeight }}px">
+        <view class="placeholder">
+            <view class="name">{{ name }}</view>
+            <view class="content">{{ content }}</view>
+        </view>
+        <image src="{{ bg[selected] }}"></image>
+    </view>
+
+    <view class="select interval">
+        <!-- 选择背景图 -->
+        <text class="tip-text-big">{{ text.bgTip }}</text>
+        <view class="images">
+            <view class="bg" wx:for="{{ bg }}" bindtap="selectBg" data-index="{{ index }}">
+                <view class="select-blur" wx:if="{{ selected == index }}"></view>
+                <image src="{{ item }}" mode="widthFix"></image>
+            </view>
+        </view>
+        <!-- 选择背景图 end -->
+
+        <!-- 昵称 -->
+        <text class="tip-text-big">{{ text.nameTip }}</text>
+        <input type="text" value="{{ name }}" bindinput="nameInput" maxlength="8"></input>
+        <!-- 昵称 end -->
+
+        <!-- 邀请语 -->
+        <text class="tip-text-big">{{ text.contentTip }}</text>
+        <input type="text" value="{{ content }}" bindinput="contentInput" maxlength="15"></input>
+        <!-- 邀请语 end -->
+
+        <!-- 邀请 -->
+        <view class="btn-bg">
+            <button class='finish-btn mango-bg' open-type="share">{{ text.inviteBtn }}</button>
+        </view>
+        <!-- 邀请 end -->
+    </view>
+</block>

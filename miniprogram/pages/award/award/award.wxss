@@ -1,0 +1,181 @@
+/* pages/award/award.wxss */
+
+page {
+    background: #f5f5f5;
+}
+
+.interval {
+    width: 90vw;
+    margin: 0 5vw;
+}
+
+.body {
+    border-radius: 20rpx;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+
+/**
+ * 大标题
+ */
+.header {
+    position: relative;
+}
+
+.bigTitle {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 20rpx 0;
+
+    position: absolute;
+    bottom: 0;
+}
+
+.bigTitle view {
+    margin-right: 20rpx;
+    width: auto;
+    text-align: center;
+}
+
+.bigTitle .big {
+    font-size: 70rpx;
+    font-weight: bold;
+    color: #3B353E;
+}
+
+.bigTitle .small {
+    font-size: 40rpx;
+    color: gray;
+}
+
+/**
+ * empty
+ */
+.empty {
+    height: 60vh;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.empty text {
+    font-size: 30rpx;
+    color: lightgray;
+    padding: 10rpx 0;
+    text-align: center;
+}
+
+/**
+ * 列表
+ */
+
+.list-cell {
+    border-radius: 20rpx;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding: 30rpx 20rpx;
+    margin: 30rpx 0;
+}
+
+.list-cell-avatar {
+    width: 100rpx;
+
+    display: flex;
+    align-items: center;
+}
+
+.list-cell-avatar image {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+}
+
+.list-cell-content {
+    flex: 1;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding: 0 10rpx;
+}
+
+.cell-title {
+    color: white;
+    font-size: 40rpx;
+    font-weight: 500;
+}
+
+.cell-content {
+    color: #f9f9f9;
+    font-size: 25rpx;
+    padding: 10rpx 0;
+}
+
+.cell-habit {
+    color: white;
+    font-size: 20rpx;
+    font-weight: 300;
+}
+
+.list-cell-right {
+    width: 120rpx;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.right-header {
+    width: 100%;
+    height: 40rpx;
+    background: #fd746c; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #fd746c, #ff9068); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fd746c, #ff9068); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 20rpx 20rpx 0 0;
+
+    font-size: 25rpx;
+    color:white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-content {
+    width: 100%;
+    height: 60rpx;
+    border-radius: 0 0 20rpx 20rpx;
+    border: 2.5rpx solid #fd746c;
+    border-top: none;
+
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.other-grad-bg {
+    background: -webkit-linear-gradient(to right, #ff7e5f, #feb47b); 
+    background: linear-gradient(to right, #ff7e5f, #feb47b); 
+}

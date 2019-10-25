@@ -1,0 +1,11 @@
+<!--components/modal/modal.wxml-->
+<view class="modal">
+    <view class="body">
+        <slot></slot>
+        <push bindtap="ClickHandler">
+            <view class="button" wx:if="{{ title != '' }}">{{ title }}</view>
+        </push>
+    </view>
+
+    <image wx:if="{{ close }}" bindtap="ClickClose" class="close" src="/images/common/close.png"></image>
+</view>

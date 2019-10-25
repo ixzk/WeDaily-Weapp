@@ -1,0 +1,43 @@
+<!--pages/square/detail/detail.wxml-->
+<toast id="toast"></toast>
+
+<nav
+    id="nav"
+    back
+    transparent
+    alwaysShow
+>
+</nav>
+
+<view class="body interval" style="padding-top: {{ headerHeight }}px">
+    <view class="main mango fade-in" wx:if="{{ item }}">
+        <image class="image" src="{{ item.image }}" mode="widthFix" wx:if="{{ item.image }}"></image>
+        <view class="content">
+            <text class="content-text">{{ item.content }}</text>
+            <text class="content-time">{{ item.formatTimeFull }}</text>
+            <image class="content-avatar" src="{{ item.avatar }}"></image>
+        </view>
+    </view>
+
+    <!-- 伙伴评价 -->
+    <!-- <view style="margin-top:50rpx" wx:if="{{ item._openid == partnerInfo._openid && !item.partner_content }}">
+        <view class='partner-btn mango-bg mango fade-in' bindtap="partnerAdd">{{ text.partnerAdd }}</view>
+    </view> -->
+    <!-- 伙伴评价 end -->
+
+    <!-- 删除 -->
+    <view style="margin-top:50rpx" wx:if="{{ delete }}">
+        <view class='del-btn mango fade-in' bindtap="del">{{ text.delete }}</view>
+    </view>
+    <!-- 删除 end -->
+</view>
+
+<modal close title="{{ text.partnerFinish }}" wx:if="{{ partnerAddTip }}" class="mango {{ partnerAddTip ? 'fade-in-up' : 'fade-out' }}" bind:ClickHandler="modalClick" bind:ClickClose="modalClose">
+    <textarea
+        value="{{ partnerContent }}"
+        placeholder="{{ text.placeholder }}"
+        bindinput="contentInput">
+    </textarea>
+</modal>
+
+<footer></footer>

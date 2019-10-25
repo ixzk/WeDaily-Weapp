@@ -1,0 +1,9 @@
+<!--components/nav/nav.wxml-->
+<view class="nav mango {{ iPhoneX ? 'iPhoneX' : 'normal'}} {{ transparent ? 'transparent-bg' : 'normal-bg'}} {{ alwaysShow ? '' : first ? 'hide' : (show ? 'fade-in show' : 'fade-out hide') }}" style="{{ back ? '' : 'pointer-events: none;'}}">
+    <view class="body">
+        {{ title }}
+    </view>
+    <view bindtap="goBack" class="back">
+        <image src="images/back.png" wx:if="{{ back }}"></image>
+    </view>
+</view>

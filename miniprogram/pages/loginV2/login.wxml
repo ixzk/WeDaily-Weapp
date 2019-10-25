@@ -1,0 +1,23 @@
+<!--pages/loginV2/login.wxml-->
+
+<hello id="hello"></hello>
+
+<view class="login-body">
+    <view class="logo-text mango fade-in-up">{{ text.title }}</view>
+    <view class="tip">
+        <text class="tip1 mango mango-slow fade-in">{{ text.tip1 }}</text>
+        <text class="tip2 mango mango-slow fade-in">{{ text.tip2 }}</text>
+        <text class="tip3 mango mango-slow fade-in">{{ text.tip3 }}</text>
+    </view>
+    <view class="bottom">
+        <view class="watch-face {{ loading ? 'pulse' : ''}}">
+            <view class="circle"></view>
+            <view class="circle"></view>
+            <view class="circle"></view>
+            <view class="circle"></view>
+            <view class="circle"></view>
+            <view class="circle"></view>
+        </view>
+        <button id="login" class='' open-type='getUserInfo' bindgetuserinfo="login" disabled="{{ loading }}">{{ loading ? text.loading : text.login }}</button>
+    </view>
+</view>

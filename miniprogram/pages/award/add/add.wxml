@@ -1,0 +1,76 @@
+<!--pages/award/add/add.wxml-->
+<nav
+    title="添加奖励"
+    alwaysShow
+    back
+>
+</nav>
+
+<toast id="toast"></toast>
+
+<view class="" style="padding-top: {{ headerHeight }}px">
+    <view class="body interval">
+        
+        <!-- 选择奖励对象 -->
+            <block wx:if="{{ partnerInfo }}">
+                <text class='tip-text-big'>{{ text.tip1 }}</text>
+                <view class="avatar-list">
+                    <view class="avatar-item" bindtap="toPartner" data-type="my">
+                        <image class="{{ to_partner ? '' : 'on' }}" src="{{ userInfo.avatar }}"></image>
+                    </view>
+                    <view class="avatar-item" bindtap="toPartner" data-type="partner">
+                        <image class="{{ to_partner ? 'on' : '' }}" src="{{ partnerInfo.avatar }}"></image>
+                    </view>
+                </view>
+            </block>
+        <!-- 选择奖励对象 end -->
+
+        <!-- 选择一个习惯 -->
+            <text class='tip-text-big'>{{ text.tip2 }}</text>
+            <view class="habit-list">
+                <block wx:for="{{ to_partner ? partnerHabit : myHabit }}">
+                    <view class="habit-cell mango {{ index == habit_index ? 'mango-grad-bg bounceIn' : ''}}" bindtap="selectHabit" data-index="{{ index }}">
+                        <image src="/images/flag-icon/{{ item.icon }}.png"></image>
+                        <text>{{ item.title }}</text>
+                    </view>
+                </block>
+            </view>
+        <!-- 选择一个习惯 end -->
+        
+        <!-- 奖励什么 -->
+            <text class='tip-text-big'>{{ text.tip3 }}</text>
+            <input class='award-name' type='text' placeholder='{{ text.namePlaceholder }}' bindinput="nameInput" maxlength="15" value="{{ title }}"></input>
+        <!-- 奖励什么 end -->
+
+        <!-- 激励的话 -->
+            <text class='tip-text-big'>{{ text.tip4 }}</text>
+            <input class='award-name' type='text' placeholder='{{ text.detailPlaceholder }}' bindinput="contentInput" maxlength="20" value="{{ content }}"></input>
+        <!-- 激励的话 end -->
+
+        <!-- 达成条件 -->
+            <block wx:if="{{ dayHabit }}">
+                <text class='tip-text-big'>{{ text.tip5 }} {{ lastDay }} 天</text>
+            </block>
+
+            <block wx:else>
+                <picker mode="selector" value="{{ time_index }}" range="{{ times }}" bindchange="timePickerChange">
+                    <text class='tip-text-big'>{{ text.tip6 }}</text>
+                    <view class="day">
+                        <view class="day-bg">
+                            次
+                        </view>
+                        <text class="day-tip">{{ last_count }}</text>  
+                    </view>
+                </picker>
+            </block>
+        <!-- 达成条件 end -->
+
+        <!-- 保存 -->
+        <view class="btn-bg">
+            <view class='finish-btn mango-bg' bindtap="save">{{ text.finish }}</view>
+        </view>
+        <!-- 保存 end -->
+    </view>
+</view>
+
+<footer></footer>

@@ -1,0 +1,52 @@
+/* components/modal/modal.wxss */
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(104, 103, 103, 0.842);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.body {
+    width: 70vw;
+    background: white;
+    border-radius: 20rpx;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding: 20rpx;
+}
+
+.button {
+    width: 50vw;
+    height: 80rpx;
+    background: -webkit-linear-gradient(to right, #ffe259, #ffa751);
+    background: linear-gradient(to right, #ffe259, #ffa751);
+    border-radius: 50rpx;
+    border: 5rpx solid #242529;
+    margin: 20rpx 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #242529;
+    font-weight: 500;
+}
+
+.close {
+    margin-top: 100rpx;
+    width: 60rpx;
+    height: 60rpx;
+}

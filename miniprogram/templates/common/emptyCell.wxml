@@ -1,0 +1,11 @@
+<template name="emptyCell">
+    <view class='empty-cell'>
+        <view>
+            <text class="tip">空空如也~</text>
+        </view>
+        <view class="add-btn">
+            <image src="../../images/common/add.png"></image>
+            <text class="add-tip" bindtap="addHabit">添加习惯</text>
+        </view>
+    </view>
+</template>

@@ -1,0 +1,7 @@
+/* components/nav/header/header.wxss */
+.header {
+    width: 100vw;
+    position: relative;
+    background: #f5f5f5;
+    overflow: hidden;
+}

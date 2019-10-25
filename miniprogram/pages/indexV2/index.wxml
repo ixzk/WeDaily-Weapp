@@ -1,0 +1,130 @@
+<!--pages/indexV2/index.wxml-->
+<nav
+    id="nav"
+    title="Today"
+>
+</nav>
+
+<toast id="toast"></toast>
+<add id="add"></add>
+
+<header>
+    <view class="header interval">        
+        <view class="bigTitle">
+            <view class="{{ myVisual ? 'big' : 'small' }}" bindtap="changeVisual" data-type="my">{{ text.mine }}</view>
+            <view class="{{ myVisual ? 'small' : 'big' }}" bindtap="changeVisual" data-type="ta" wx:if="{{ partner }}">{{ partnerInfo.sex == 1 ? text.he : text.she }}</view>
+        </view>
+
+        <view class="user-info interval mango mango-slow {{ myVisual ? 'fade-in' : 'fade-out' }}" wx:if="{{ myVisual }}">
+            <view class="user-avatar">
+                <image src="{{ userInfo.avatar}}"></image>
+            </view>
+            <view class="user-name">
+                <text class="user-name-text">{{ userInfo.nickname }}</text>
+                <view class="today">
+                    <text class="today-tip">{{ text.today }} </text>
+                    <text class="num">{{ my_finish_num + "/" + my_amount_num }}</text>
+                </view>
+            </view>
+        </view>
+
+        <view class="user-info interval mango mango-slow {{ myVisual ? 'fade-out' : 'fade-in' }}" wx:if="{{ !myVisual }}">
+            <view class="user-avatar">
+                <image src="{{ partnerInfo.avatar }}"></image>
+            </view>
+            <view class="user-name">
+                <text class="user-name-text">{{ partnerInfo.nickname }}</text>
+                <view class="today">
+                    <text class="today-tip">{{ text.today }} </text>
+                    <text class="num">{{ partner_finish_num + "/" + partner_amount_num }}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</header>
+
+<view class="body interval">
+
+    <!-- 邀请伙伴或者刷新伙伴信息 -->
+    <block wx:if="{{ !partner }}">
+        <text class="tip-text today-tip">{{ text.refreshTip }}</text>
+            <view class="partner-refresh">
+                <block wx:if="{{ !invitePartner }}">
+                    <navigator url="/pages/invite/invite">
+                        <text class="invite">{{ text.refreshNoTitle }}</text>
+                    </navigator>
+                </block>
+                <block wx:else>
+                    <text class="invite" bindtap="refresh">{{ text.refreshTitle }}</text>
+                </block>
+            </view>
+    </block>
+    
+    <!-- 对方进度 -->
+    <block wx:if="{{ partner }}">
+        <text class="tip-text today-tip">{{ myVisual ? (partnerInfo.sex == 1 ? text.he : text.she) : text.mine }}{{ text.taTip }}</text>
+        <view class="ta-today">
+            <view class="progress">
+                <view class="progress-bar" style="width: {{ (!myVisual ? (my_finish_num / my_amount_num) : (partner_finish_num / partner_amount_num)) * 100 }}%">
+                    <view class="progress-shadow"></view>
+                </view>
+            </view>
+            <text class="num">{{ !myVisual ? my_finish_num + "/" + my_amount_num : partner_finish_num + "/" + partner_amount_num }}</text>
+        </view>
+    </block>
+
+    <text class="tip-text today-tip">{{ text.todayTip }}</text>
+    <view class="habit-list">
+      <block wx:if="{{ lists.length == 0 }}">
+        <block wx:if="{{ myVisual }}">
+            <navigator url="/pages/addV2/add"> 
+                <view class="empty">
+                    <text>{{ text.empty }}</text>
+                    <text>{{ text.addHabit }}</text>
+                </view>
+            </navigator>
+        </block>
+        <block wx:else>
+            <view class="empty">
+                <text>{{ text.empty }}</text>
+            </view>
+        </block>
+      </block>
+      <!-- 清单Cell -->
+      <block wx:for="{{ lists }}">
+        <view class='list-cell mango fade-in-up'
+            data-habitid="{{ item._id }}" 
+            data-index="{{ index }}"
+            data-finishid="{{ item.finish_id }}"
+            bindtap="{{ myVisual ? item.finish ? 'cancelHabit' : 'finishHabit' : 'partnerHabit'}}"
+        >
+            <view class="list-cell-left">
+                <view class='list-cell-icon'>
+                    <image src='../../images/flag-icon/{{ item.finish ? "finish.svg" : item.icon + ".png"}}'></image>
+                </view>
+            </view>
+            <view class='list-cell-content'>
+                <view class='list-cell-content-title'>
+                <text class='{{ item.finish ? "finish" : "" }}'>{{ item.title }}</text>
+                <!-- <image wx:if="{{ item.share }}" src='../../images/mine/share.png'></image> -->
+                </view>
+                <text class="day">{{ item.finish ? text.finish + " · " : ""}}{{ text.reach }} {{ item.times}} 次</text>
+            </view>
+        </view>
+      </block>
+      <!-- 清单Cell end -->
+    </view>
+</view>
+
+<modal title="加油鸭" wx:if="{{ showTodayTip }}" class="mango {{ showTodayTip ? 'fade-in-up' : 'fade-out' }}" bind:ClickHandler="modalClick">
+    <text class="modal-title">{{ nowHour <= 12 ? text.todayMorningTip : text.todayAfternoonTip }}</text>
+    <text class="modal-content">{{ text.todayTip1 }} <text class="modal-num">{{ my_amount_num }}</text> {{ text.todayTip2 }}</text>
+</modal>
+
+<modal wx:if="{{ tixing }}" class="mango {{ tixing ? 'fade-in-up' : 'fade-out' }}">
+    <text class="modal-title-">{{ text.noFormIdTitle }}</text>
+    <text class="modal-content">{{ text. noFormIdContent }}</text>
+    <button open-type="share" class="noFormIdBtn">{{ text.noFormIdBtn }}</button>
+</modal>
+
+<footer></footer>

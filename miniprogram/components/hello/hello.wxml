@@ -1,0 +1,41 @@
+<!--components/hello.wxml-->
+<view class="hello-body {{ show ? 'mango mango-slow fade-in' : '' }}" wx:if="{{ show }}">
+    <!-- 欢迎语 -->
+    <view class="tip tip1 mango {{ step == 0 ? 'fade-in' : 'fade-out' }}" wx:if="{{ step <= 1}}">
+        <text>{{ text.tip1.title }} {{ name }}</text>
+        <text>{{ text.tip1.subTitle }}</text>
+    </view>
+
+    <!-- 邀请好友打卡 -->
+    <view class="tip tip2 mango {{ step == 1 ? 'fade-in' : 'fade-out' }}" wx:if="{{ step <= 2}}">
+        <text>{{ text.tip2.string1 }}</text>
+        <text>{{ text.tip2.string2 }}</text>
+        <image class="" src="/images/hello/invite.png" mode="widthFix"/>
+        <text>{{ text.tip2.string3 }}</text>
+        <image class="" src="/images/hello/share.png" mode="widthFix"/>
+    </view>
+
+    <!-- 添加习惯，查看习惯，打卡 -->
+    <view class="tip tip3 mango {{ step == 2 ? 'fade-in' : 'fade-out' }}" wx:if="{{ step <= 3}}">
+        <text>{{ text.tip3.string1 }}</text>
+        <text>{{ text.tip3.string2 }}</text>
+        <image class="" src="/images/hello/her.png" mode="widthFix"/>
+    </view>
+
+    <!-- 关注公众号 -->
+    <view class="tip tip4 mango {{ step == 3 ? 'fade-in' : 'fade-out' }}" wx:if="{{ step <= 4}}">
+        <text>{{ text.tip4.string1 }}</text>
+        <text>{{ text.tip4.string2 }}</text>
+        <image class="" src="/images/hello/tip.jpg" mode="widthFix"/>
+    </view>
+
+    <!-- 感谢使用 -->
+    <view class="tip tip5 mango {{ step == 4 ? 'fade-in' : 'fade-out' }}" wx:if="{{ step <= 5}}">
+        <text>{{ text.tip5.string1 }}</text>
+        <text>{{ text.tip5.string2 }}</text>
+    </view>
+
+    <!-- 圆形按钮 -->
+    <view class="nextBtn mango breath" bindtap="next"></view>
+
+</view>

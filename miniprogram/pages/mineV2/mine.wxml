@@ -1,0 +1,103 @@
+<!--pages/mineV2/mine.wxml-->
+<nav
+    id="nav"
+    title="我的"
+>
+</nav>
+
+<toast id="toast"></toast>
+<add id="add"></add>
+
+<view class="body theme-{{ theme }}">
+    <view class="header-bg">
+      <view class="user-info interval">
+        <text class="user-name">{{ userInfo.nickname }}</text>
+        <text class="day">{{ text.day }} {{ sinceToday }} 天</text>
+        <!-- 任务统计 -->
+          <!-- <view class='flag-statis'>
+            <view class='flag-statis-layout layout1'>
+              <text class='layout-num main-color'>100</text>
+              <text class='layout-text'>习惯数</text>
+            </view>
+            <view class='flag-statis-layout layout2'>
+              <text class='layout-num main-color'>323</text>
+              <text class='layout-text'>打卡次数</text>
+            </view>
+            <view class='flag-statis-layout layout3'>
+              <text class='layout-num main-color'>0</text>
+              <text class='layout-text'>被打脸</text>
+            </view>
+          </view> -->
+        <!-- 任务统计 end -->
+      </view>
+      <navigator url="/pages/setting/setting">
+        <image src="/images/mine/setting.png" class="setting mango mango-slow pulse"></image>
+      </navigator>
+      <image src="{{ userInfo.avatar }}" class="avatar"></image>
+    </view>
+    
+    <!-- 好友 -->
+    <text class="tip-text interval">
+      {{ partner ? (partnerInfo.sex == 1 ? text.myPartnerBoy : text.myPartnerGirl ) : text.myPartner}}
+    </text>
+    <view class="partner interval">
+      <block wx:if="{{ partner }}">
+        <view class="partner-info">
+          <view class="partner-avatar">
+            <image src="{{ partnerInfo.avatar }}"></image>
+          </view>
+          <view class="partner-name">
+            <text class="user-name">{{ partnerInfo.nickname }}</text>
+            <text class="day">{{ text.together }} {{ partnerTime }} 天</text>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <navigator url="/pages/invite/invite">
+          <text class="invite">{{ text.inviteTip }}</text>
+        </navigator>
+      </block>
+    </view>
+    <!-- 好友 end -->
+
+    <!-- 清单 -->
+    <text class="tip-text interval">{{ text.myHabit }}</text>
+    <view class="habit-list interval">
+      <block wx:if="{{ lists.length == 0 }}">
+        <navigator url="/pages/addV2/add">
+          <view class="empty">
+            <text>{{ text.empty }}</text>
+            <text>{{ text.addHabit }}</text>
+          </view>
+        </navigator>
+      </block>
+      <!-- 清单Cell -->
+      <block wx:for="{{ lists }}">
+        <navigator url="/pages/calendar/calendar?habit_id={{ item._id }}&type=my">
+          <view class='list-cell mango fade-in-up'>
+            <view class="list-cell-left">
+                <view class='list-cell-icon'>
+                    <image src='../../images/flag-icon/{{ item.icon }}.png'></image>
+                </view>
+            </view>
+            <view class='list-cell-content'>
+              <view class='list-cell-content-title'>
+                <text>{{ item.title }}</text>
+                <image wx:if="{{ item.share }}" src='../../images/mine/share.png'></image>
+              </view>
+              <text class="day">{{ text.habitTip1 }}{{ item.times}} 次 · {{ item.lastday >= 0 || item.lastday == '∞' ? text.habitTip2 + item.lastday + " 天" : text.habitFinish }}</text>
+            </view>
+            <!-- <view class='list-cell-right'>
+              <text class='main-color day-tip'>剩 </text>
+              <text class='main-color day'>{{ item.lastday }}</text>
+              <text class='main-color day-tip'> 天</text>
+            </view> -->
+          </view>
+        </navigator>
+      </block>
+      <!-- 清单Cell end -->
+    </view>
+    <!-- 清单 end -->
+</view>
+
+<footer></footer>

@@ -1,0 +1,11 @@
+<!--components/push/push.wxml-->
+<form
+  report-submit
+  bindsubmit='add'>
+  <button
+    form-type='submit'
+    class="custom-class"
+    hover-class='button-hover'>
+    <slot />
+  </button>
+</form>

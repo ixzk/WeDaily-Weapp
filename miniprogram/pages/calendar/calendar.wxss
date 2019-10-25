@@ -1,0 +1,240 @@
+/* pages/test/test.wxss */
+
+@import "/Mango/Animation/mango.wxss";
+
+
+page {
+    background: #f5f5f5;
+}
+
+view {
+    color: #333;
+    font-family: 'Courier New', Courier, monospace
+}
+
+.calendar {
+    width: 100vw;
+    background: white;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.calendar-header {
+    height: 10vh;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.calendar-header .center {
+    font-weight: bolder;
+    font-size: 50rpx;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.calendar-header .left, .calendar-header .right {
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.calendar-header image {
+    width: 100%;
+    height: 100%;
+}
+
+.calendar-body {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.calendar-body .weekday {
+    height: 80rpx;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-bottom: 1rpx solid #f5f5f5;
+}
+
+.weekday .item {
+    flex: 1;
+    
+    text-align: center;
+    font-size: 40rpx;
+    font-weight: bold;
+}
+
+.day {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.day .item {
+    width: 14.285vw;
+    height: 100rpx;
+
+    font-size: 30rpx;
+    font-weight: 600;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.day .item view {
+    width: 100%;
+    height: 80rpx;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.day .currentDay {
+    font-weight: bold;
+}
+
+.day .otherMonth {
+    color: lightgray;
+}
+
+.day .onNormal {
+    background: #ffa751;
+    color: white;
+}
+
+.day .onSingle {
+    border-radius: 50rpx;
+}
+
+.day .onLeft {
+    border-radius: 50rpx 0 0 50rpx;
+}
+
+.day .onRight {
+    border-radius: 0 50rpx 50rpx 0;
+}
+
+.list-cell {
+    width: 100vw;
+    height: 150rpx;
+    margin: 20rpx 0;
+
+    background: white;
+
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+    padding: 0 50rpx;
+
+    display: flex;
+    align-items: center;
+    
+}
+
+.list-cell-icon {
+    padding: 0 20rpx;
+}
+
+.list-cell-icon image {
+    width: 70rpx;
+    height: 70rpx;
+}
+
+.list-cell-content {
+    flex: 1;
+}
+
+.list-cell-right image {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.btn-bg {
+    height: 150rpx;
+    padding-top: 50rpx;
+    /* margin: 50rpx auto 150rpx; */
+}
+
+.finish-btn, .del-btn {
+    width: 50vw;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    border-radius: 10rpx;
+    font-size: 35rpx;
+    margin: 0 auto;
+    color:white;
+}
+  
+.del-btn {
+    background: #E64340;
+}
+
+
+/**
+ * 习惯详情
+ */
+
+.detail {
+    width: 100vw;
+    
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+    padding: 5rpx 10vw;
+
+    background: white;
+}
+
+.day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+.day-bg {
+    width: 200rpx;
+    height: 150rpx;
+
+    font-size: 20rpx;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.day-tip {
+    position: absolute;
+    height: 150rpx;
+
+    line-height: 150rpx;
+    font-size: 80rpx;
+    font-weight: bold;
+
+    background: -webkit-linear-gradient(to right, #ffe259, #ffa751);
+    background: linear-gradient(to right, #ffe259, #ffa751);
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+.tip-text {
+    text-align: center;
+    padding-top: 20rpx;
+}
+
+
+

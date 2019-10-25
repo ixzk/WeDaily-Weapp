@@ -1,0 +1,4 @@
+<!--components/nav/header/header.wxml-->
+<view class="header" style="height: {{ height }}px">
+    <slot></slot>
+</view>

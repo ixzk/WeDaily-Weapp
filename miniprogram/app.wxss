@@ -1,0 +1,90 @@
+/**app.wxss**/
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+} 
+
+.mango-bg {
+  /* background: #FADF64; */
+  background: #ffa751;
+}
+
+/* 渐变色 */
+.mango-grad-bg {
+  background: -webkit-linear-gradient(to right, #ffa751, #ffe259);
+  background: linear-gradient(to right, #ffa751, #ffe259);
+}
+
+.leaf-grad-bg {
+  background: -webkit-linear-gradient(to right, #1d976c, #93f9b9);
+  background: linear-gradient(to right, #1d976c, #93f9b9);
+}
+
+.main-color {
+  color: #3B353E;
+}
+
+.common-header {
+  width: 100vw;
+  height: 300rpx;
+  position: fixed;
+  z-index: 9;
+}
+
+/* iPhoneX 适配 */
+.common-header-x {
+  height: 350rpx;
+}
+
+/* .body {
+  width: 90vw;
+  height: auto;
+  margin: 0 auto;
+} */
+
+.clear {
+  clear: both;
+}
+
+/* 提示型文字 */
+.tip-text {
+  display: block;
+  font-size: 28rpx;
+  font-weight: bold;
+  padding: 5rpx 0;
+  color: lightgray;
+}
+
+.tip-text-big {
+  display: block;
+  font-size: 28rpx;
+  font-weight: bold;
+  padding: 5rpx 0;
+  color: lightgray;
+  margin: 50rpx auto 20rpx;
+}
+
+/* 带主题色下划线文字 */
+.title {
+  margin: 5px 0;
+}
+.title > text {
+  font-size:20px;
+  font-weight:400;
+  color:#333;
+  background: linear-gradient(0deg,#FADF64 50%, transparent 50%);
+  border-radius: 5px;
+}
+
+/**
+ * V2全局样式
+ * 
+ * 规范: mango- 开头表示全局样式
+ */
+
+/* 全局背景 */
+.mango-main-bg {
+  background: #F5F5F5;
+}

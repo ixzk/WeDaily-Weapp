@@ -1,0 +1,65 @@
+<!--pages/setting/setting.wxml-->
+<nav
+    title="设置"
+    alwaysShow
+    back
+>
+</nav>
+
+<toast id="toast"></toast>
+
+<view class="body" style="padding-top: {{ headerHeight }}px">
+    
+    <text class="tip-text-big interval">{{ text.tip1 }}</text>
+    <view class="table-view interval">
+        <!-- <view class="cell">
+            <text>{{ text.setting1[0] }}</text>
+        </view> -->
+        <view class="cell" bindtap="cellClick" data-type="log">
+            <text>{{ text.setting1[1] }}</text>
+        </view>
+        <!-- <view class="cell" bindtap="copyUrl" data-page="index">
+            <text>{{ text.setting1[2] }}</text>
+        </view> -->
+    </view>
+
+    <text class="tip-text-big interval">{{ text.tip2 }}</text>
+    <view class="table-view interval">
+        <view class="cell" bindtap="cellToastStyle">
+            <text>{{ text.setting2[0] }}</text>
+        </view>
+        <view class="toast-style" style="height:{{ showToastStyle ? '90' : '0' }}rpx">
+            <view class="toast-style-item" bindtap="changeToastStyle" data-style="0">
+                <image src="/images/setting/default.png" class="tip-image"></image>
+                <image src="/images/flag-icon/finish.svg" class="finish-image" wx:if="{{ toastStyle == 0 }}"></image>
+            </view>
+            <view class="toast-style-item" bindtap="changeToastStyle" data-style="1">
+                <image src="/images/setting/mango.png" class="tip-image"></image>
+                <image src="/images/flag-icon/finish.svg" class="finish-image" wx:if="{{ toastStyle == 1 }}"></image>
+            </view>
+        </view>
+
+        <view class="cell" bindtap="reload">
+            <text>{{ text.setting2[1] }}</text>
+        </view>
+
+        <view class="cell" bindtap="unbind" wx:if="{{ partnerInfo }}">
+            <text style="color:#E64340">{{ text.setting2[2] }}</text>
+        </view>
+    </view>
+
+    <text class="tip-text-big interval">{{ text.tip3 }}</text>
+    <view class="table-view interval">
+        <view class="cell" bindtap="cellClick" data-type="zero">
+            <text>{{ text.setting3[0] }}</text>
+        </view>
+    </view>
+
+    <view class="footer">
+        <view>{{ text.footer[0] }}</view>
+        <text>{{ text.footer[1] }}</text>
+        <text>{{ text.footer[2] }}</text>
+        <text>{{ text.footer[3] }}</text>
+        <text style="color: #f1f1f1">{{ text.footer[4] }}</text>
+    </view>
+</view>

@@ -1,0 +1,52 @@
+<!--pages/square/add/add.wxml-->
+<nav
+    title="{{ currentTime }}"
+    alwaysShow
+    back
+>
+</nav>
+
+<toast id="toast"></toast>
+
+<view class="body" style="padding-top: {{ headerHeight }}px">
+    <view class="image-area" bindtap="chooseImage">
+        <block wx:if="{{ image == null }}">
+            <image src="/images/square/photo.png" class="icon"></image>
+        </block>
+        <block wx:else>
+            <image class="image" src="{{ image }}" mode="widthFix"></image>
+        </block>
+    </view>
+
+    <view class="menu">
+        <text>{{ text.limitTip }}</text>
+        <view class="limit" bindtap="selectShare" data-type="0" data-share="">
+            <view class="limit-icon">
+                <image wx:if="{{ share == 0 }}" src="/images/square/selected.png"></image>
+            </view>
+            <text>{{ text.limitMy }}</text>
+        </view>
+        <!-- <view class="limit" bindtap="selectShare" data-type="0" data-share="true">
+            <view class="limit-icon">
+                <image wx:if="{{ share == 0 && share_partner }}" src="/images/square/selected.png"></image>
+            </view>
+            <text>{{ text.limitWe }}</text>
+        </view> -->
+        <view class="limit" bindtap="selectShare" data-type="1">
+            <view class="limit-icon">
+                <image wx:if="{{ share == 1 }}" src="/images/square/selected.png"></image>
+            </view>
+            <text>{{ text.limitAll }}</text>
+        </view>
+    </view>
+
+    <view class="content-area">
+        <textarea
+            value="{{ content }}"
+            placeholder="{{ text.placeholder }}"
+            bindinput="contentInput">
+        </textarea>
+        <view class="finish mango-grad-bg" bindtap="finish">{{ text.finish }}</view>
+    </view>
+
+</view>

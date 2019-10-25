@@ -1,0 +1,55 @@
+/* components/hello.wxss */
+@import "/Mango/Animation/mango.wxss";
+
+.hello-body {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #f5f5f5;
+    z-index: 10;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tip {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.tip text {
+    color: gray;
+    font-size: 30rpx;
+    line-height: 70rpx;
+    text-align: center;
+}
+
+.nextBtn {
+    width: 100rpx;
+    height: 100rpx;
+    border: white solid 20rpx;
+    border-radius: 50%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: 100rpx;
+}
+
+.tip image {
+    width: 60vw;
+    height: auto;
+
+    border: 1rpx solid lightgray;
+    border-radius: 20rpx;
+}

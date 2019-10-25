@@ -1,0 +1,2 @@
+<!--components/common/footer/footer.wxml-->
+<view style="width:100vw; height:{{ height }}px"></view>
