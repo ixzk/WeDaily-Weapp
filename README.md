@@ -5,6 +5,9 @@
 > 🔥 2019中国高校计算机大赛-微信小程序应用开发赛 华北赛区一等奖。
 > 
 > 项目在上传到Github之前做了脱敏操作。当然，连项目名也做了脱敏。原xxxxx Daily改名为We Daily。
+> 
+> 开发笔记1: [WeApp – 2019小程序应用开发赛总结](https://www.xuzhengke.cn/archives/667)
+> 开发笔记2: [「高校开发者」小程序 + 云开发 = 个人开发者快速创作的平台](https://www.xuzhengke.cn/archives/725)
 
 
 ## 项目运行
